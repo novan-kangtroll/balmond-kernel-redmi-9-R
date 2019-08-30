@@ -44,9 +44,6 @@ config USB_HIDDEV
 
 	  If unsure, say Y.
 
-menu "USB HID Boot Protocol drivers"
-	depends on USB!=n && USB_HID!=y && EXPERT
-
 config USB_KBD
 	tristate "USB HIDBP Keyboard (simple Boot) support"
 	depends on USB && INPUT
@@ -78,7 +75,5 @@ config USB_MOUSE
 	  module will be called usbmouse.
 
 	  If even remotely unsure, say N.
-
-endmenu
 
 endmenu

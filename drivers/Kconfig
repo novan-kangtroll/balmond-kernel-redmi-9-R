@@ -11,8 +11,6 @@ source "drivers/rtl8188eus/Kconfig"
 
 source "drivers/connector/Kconfig"
 
-source "drivers/gnss/Kconfig"
-
 source "drivers/mtd/Kconfig"
 
 source "drivers/of/Kconfig"
@@ -197,8 +195,6 @@ source "drivers/thunderbolt/Kconfig"
 
 source "drivers/android/Kconfig"
 
-source "drivers/gpu/trace/Kconfig"
-
 source "drivers/nvdimm/Kconfig"
 
 source "drivers/dax/Kconfig"
@@ -220,6 +216,5 @@ source "drivers/mux/Kconfig"
 source "drivers/switch/Kconfig"
 
 source "drivers/nfc/Kconfig"
-
 source "drivers/p73-spi/Kconfig"
 endmenu
