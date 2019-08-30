@@ -617,14 +617,7 @@ static int hidg_setup(struct usb_function *f,
 			((u8 *) req->buf)[0] = 0;	/* Boot protocol */
 		else
 			((u8 *) req->buf)[0] = 1;	/* Report protocol */
-		goto respond;
-		break;
 
-	case ((USB_DIR_IN | USB_TYPE_CLASS | USB_RECIP_INTERFACE) << 8
-		  | HID_REQ_GET_IDLE):
-		VDBG(cdev, "get_idle\n");
-		length = min_t(unsigned int, length, 1);
-		((u8 *) req->buf)[0] = hidg->idle;
 		goto respond;
 		break;
 
