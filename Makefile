@@ -688,7 +688,22 @@ KBUILD_CFLAGS	+= $(call cc-disable-warning, array-compare)
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS   += -Os
 else
+<<<<<<< HEAD
 KBUILD_CFLAGS   += -O3
+=======
+ifdef CONFIG_PROFILE_ALL_BRANCHES
+KBUILD_CFLAGS	+= -O2 $(call cc-disable-warning,maybe-uninitialized,)
+else
+KBUILD_CFLAGS   += -O2
+endif
+endif
+
+KBUILD_CFLAGS += $(call cc-ifversion, -lt, 0409, \
+			$(call cc-disable-warning,maybe-uninitialized,))
+
+ifdef CONFIG_CC_WERROR
+##KBUILD_CFLAGS  += -Werror
+>>>>>>> 02d4da8001d7 (Apply add-rtl88xxau-5.6.4.2-drivers patch)
 endif
 
 # Tell gcc to never replace conditional load with a non-conditional one
