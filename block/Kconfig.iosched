@@ -54,6 +54,9 @@ choice
 
 	config DEFAULT_DEADLINE
 		bool "Deadline" if IOSCHED_DEADLINE=y
+		
+	config DEFAULT_TRIPNDROID
+		bool "TD" if IOSCHED_TRIPNDROID=y
 
 	config DEFAULT_CFQ
 		bool "CFQ" if IOSCHED_CFQ=y
@@ -67,6 +70,7 @@ config DEFAULT_IOSCHED
 	string
 	default "deadline" if DEFAULT_DEADLINE
 	default "cfq" if DEFAULT_CFQ
+	default "tripndroid" if DEFAULT_TRIPNDROID
 	default "noop" if DEFAULT_NOOP
 
 config MQ_IOSCHED_DEADLINE
