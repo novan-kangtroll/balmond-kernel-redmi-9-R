@@ -23,8 +23,12 @@ config IOSCHED_DEADLINE
 	  in case of expiry.
 	  
 config IOSCHED_TRIPNDROID
-	tristate "Tripndroid I/O scheduler"
-	default y
+	tristate "TripNDroid IO Scheduler"
+	default n
+	---help---
+	  The TripNDroid IO Scheduler is based on noop, deadline and vr
+	  it uses deadlines to ensure some fairness. The scheduler is build
+	  to keep a minimum overhead. It is mainly build for mobile devices.
 
 config IOSCHED_CFQ
 	tristate "CFQ I/O scheduler"
