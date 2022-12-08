@@ -43,6 +43,10 @@ config USB_HIDDEV
 	  event interface on /dev/usb/hiddevX (char 180:96 to 180:111).
 
 	  If unsure, say Y.
+	  
+menu "USB HID Boot Protocol drivers"
+	depends on USB!=n && USB_HID!=y && EXPERT
+
 
 config USB_KBD
 	tristate "USB HIDBP Keyboard (simple Boot) support"
@@ -75,5 +79,7 @@ config USB_MOUSE
 	  module will be called usbmouse.
 
 	  If even remotely unsure, say N.
+
+endmenu
 
 endmenu
